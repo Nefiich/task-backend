@@ -2,7 +2,7 @@
 import { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
-import * as jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 import { validate } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 

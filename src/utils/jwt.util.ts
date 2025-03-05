@@ -1,5 +1,5 @@
 // jwt.util.ts
-import * as jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 import { JWT_SECRET, JWT_EXPIRES_IN } from '../config/jwt';
 
 interface TokenPayload {
@@ -9,12 +9,12 @@ interface TokenPayload {
 }
 
 export const generateToken = (payload: TokenPayload): string => {
-    return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+    return jwt.sign(payload, JWT_SECRET as jwt.Secret, { expiresIn: JWT_EXPIRES_IN });
 };
 
 export const verifyToken = (token: string): TokenPayload => {
     try {
-        return jwt.verify(token, JWT_SECRET) as TokenPayload;
+        return jwt.verify(token, JWT_SECRET as jwt.Secret) as TokenPayload;
     } catch (error) {
         if (error instanceof jwt.JsonWebTokenError) {
             throw new Error('Invalid token');

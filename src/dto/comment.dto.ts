@@ -5,12 +5,12 @@ export class CreateCommentDto {
     @IsNotEmpty({ message: 'Comment content is required' })
     @IsString({ message: 'Comment content must be a string' })
     @MaxLength(500, { message: 'Comment content cannot exceed 500 characters' })
-    content: string;
+    content!: string;
 }
 
 export class UpdateCommentDto {
     @IsNotEmpty({ message: 'Comment content is required' })
     @IsString({ message: 'Comment content must be a string' })
     @MaxLength(500, { message: 'Comment content cannot exceed 500 characters' })
-    content: string;
+    content!: string;
 }

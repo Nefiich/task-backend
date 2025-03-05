@@ -1,6 +1,6 @@
 // auth.middleware.ts
 import { Request, Response, NextFunction } from 'express';
-import * as jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 import { PrismaClient } from '@prisma/client';
 import { JWT_SECRET } from '../config/jwt';
 

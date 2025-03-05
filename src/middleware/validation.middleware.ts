@@ -23,7 +23,7 @@ export const validateDto = (dtoClass: any, skipMissingProperties = false) => {
 export const validateQueryParams = (dtoClass: any, skipMissingProperties = true) => {
     return async (req: Request, res: Response, next: NextFunction) => {
         const dto = plainToInstance(dtoClass, req.query);
-        const errors = await validate(dto, { skipMissingProperties });
+        const errors = await validate(dto as object, { skipMissingProperties });
 
         if (errors.length > 0) {
             return res.status(400).json({

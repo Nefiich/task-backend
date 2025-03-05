@@ -5,7 +5,7 @@ import { TaskStatus, TaskPriority } from '@prisma/client';
 export class CreateTaskDto {
     @IsNotEmpty({ message: 'Title is required' })
     @IsString({ message: 'Title must be a string' })
-    title: string;
+    title!: string;
 
     @IsOptional()
     @IsString({ message: 'Description must be a string' })

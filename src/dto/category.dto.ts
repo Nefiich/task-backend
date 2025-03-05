@@ -5,7 +5,7 @@ export class CreateCategoryDto {
     @IsNotEmpty({ message: 'Category name is required' })
     @IsString({ message: 'Category name must be a string' })
     @MaxLength(50, { message: 'Category name cannot exceed 50 characters' })
-    name: string;
+    name!: string;
 
     @IsOptional()
     @IsString({ message: 'Description must be a string' })

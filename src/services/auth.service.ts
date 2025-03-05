@@ -1,7 +1,7 @@
 // auth.service.ts
 import { PrismaClient } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
-import * as jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 import { JWT_SECRET, JWT_EXPIRES_IN } from '../config/jwt';
 import { RegisterDto, LoginDto } from '../dto/auth.dto';
 
